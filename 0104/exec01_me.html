@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>쇼핑사진</title>
+  <style>
+    *{margin: 0px; padding: 0px;}
+    .box_left{width: 50%; display: inline-block;}
+    h1 img{border: 1px solid#ccc; width: 100%;}
+    ul{text-align: center; width: 100%;}
+    li{display: inline-block; width: 18%; border-radius: 5px; border: 1px solid #777; box-sizing: border-box; overflow: hidden;}
+    li img{
+      width: 100%;
+      transform: scale(1.2);
+    }
+
+    .box_right{width: 50%; float: right; box-sizing: border-box; padding: 10px 20px;}
+    .box_right > h2 > p:first-child{
+      display: flex;
+      justify-content: space-between;
+      padding-top: 10px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #ccc;
+    }
+    .s_txt01,.s_txt02{
+      font-size: 13px;
+    }
+    .s_txt01{color: #DF0044;}
+    .s_txt02{color: #777;}
+    .box_right > h2 > p:last-child{
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    .box_right > p:first-of-type{
+      font-size: 32px;
+    }
+  </style>
+</head>
+<body>
+  <section class="product">
+    <article class="box_left">
+      <h1><img src="./images2/photo01.jpg" alt="옷 사진1" id="big_img"></h1>
+      <ul>
+        <li><img src="./images2/photo01.jpg" alt="옷 사진1" class="small"></li>
+        <li><img src="./images2/photo02.jpg" alt="옷 사진2"class="small"></li>
+        <li><img src="./images2/photo03.jpg" alt="옷 사진3"class="small"></li>
+        <li><img src="./images2/photo04.jpg" alt="옷 사진4"class="small"></li>
+        <li><img src="./images2/photo05.jpg" alt="옷 사진5"class="small"></li>
+      </ul>
+    </article>
+    <article class="box_right">
+      <h2>
+        <p><span class="s_txt01">오늘 마감</span><span class="s_txt02">59개 구매</span></p>
+        <p>[최대40%쿠폰] 머렐 헤비다운 외 스포츠 특가</p>
+      </h2>
+      <p><span>10%</span> <span class="s_txt03">151,200</span>원~ <a href="#" title="혜택보기">혜택보기</a></p>
+      <p>168,000원~</p>
+      <p>
+        <a href="#" title="적립금">구매 전 적립금 5,000원 받기</a>
+        <a href="#" title="카드 무이자">카드 무이자 혜택보기(최대 6개월)</a>
+      </p>
+      <select>
+        <option value="">상품을 선택하세요</option>
+        <option value="">상품1</option>
+        <option value="">상품2</option>
+        <option value="">상품3</option>
+        <option value="">상품4</option>
+        <option value="">상품5</option>
+      </select>
+    </article>
+  </section>
+
+  <script>
+    //큰사진 변수에 저장
+    let photo = document.querySelector('#big_img');
+    //작은 사진 변수에 저장
+    let s_img = document.querySelectorAll('.small');
+    //반복문을 통해 목록안에 이미지를 출력한다.
+    for(let i=0; i<s_img.length;i++){
+      // console.log(s_img[i]); //출력확인
+      s_img[i].addEventListener("click",changePic); //이미지를 각각 클릭하면 해당함수가 실행된다.
+    }
+    function changePic(){ //이미지를 변경하는 함수
+      let newPic = this.src; //사용자가 선택한 이미지 속성을 변수에 저장한다.
+      // console.log(newPic);
+      //src 값을 big_img의 src속성값에 대입하여 이미지가 변경되도록 한다.
+      photo.setAttribute('src',newPic);
+
+      for(let j=0; j<s_img.length;j++){
+        s_img[j].style.border='none';
+        this.style.border='1px solid #333';
+      }
+    }
+  </script>
+</body>
+</html>

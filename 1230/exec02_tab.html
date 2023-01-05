@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>뉴스(imbc) 목록</title>
+  <style>
+    /* #MBC,#potal,#sns,#youtube{position: absolute;} */
+    #potal,#sns,#youtube{display: none;}
+    ul,li{margin: 0px; padding: 0px;}
+    article{
+      width: 430px;
+      margin: 20px;
+    }
+    div{
+      width: 430px;
+      height: 70px;
+      border-bottom: 1px solid #333;
+    }
+    div a{
+      padding: 6px;
+    }
+    h2{
+      display: inline-block;
+      margin-right: 50px;
+    }
+    ul{
+      margin-top: 10px;
+    }
+    li{
+      list-style: none;
+      margin-bottom: 20px;
+      text-overflow: ellipsis; /* 글자가 한줄로 넘칠때 생략기로 나오게 */
+      overflow: hidden; /* 해당역역을 벗어난 콘텐츠 숨긴다. */
+      white-space: nowrap; /* 다음줄로 글자가 넘어가지 않게 */
+    }
+    a{
+      text-decoration: none;
+      color: #333;
+    }
+    span,a{
+      font-size: 18px;
+      font-weight: 600;
+    }
+    span{
+      color: rgb(72, 108, 209);
+      margin-right: 30px;
+    }
+    div a:first-of-type{color: rgb(72, 108, 209);}
+  </style>
+</head>
+<body>
+  <article>
+    <div>
+      <h2 id="news">많이 본 뉴스</h2>
+      <a href="#news" title="MBC" id="btn01">MBC</a>
+      <a href="#news" title="포털" id="btn02">포털</a>
+      <a href="#news" title="SNS" id="btn03">SNS</a>
+      <a href="#news" title="유튜브" id="btn04">유튜브</a>
+    </div>
+    <ul id="MBC">
+      <li><a href="#" title="뉴스1"><span>1</span>'연쇄 살인범' 신상 공개&middot;&middot;31살 이기영ㅁㄴㅇㄴㅁㅇㅁㄴㅇㅁㄴㅇㄴㅁ</a></li>
+      <li><a href="#" title="뉴스2"><span>2</span>'제2경인고속 화재'최초 화재 운전잔 입건...ㄴㅁㅇㅁㄴㅇㅁㄴㅇㄴㅁㅇㅁㄴㅇ</a></li>
+      <li><a href="#" title="뉴스3"><span>3</span>'신생아 4명 사망' 이대목동병원 의료진 무...ㅁㄴㅇㅁㄴㅇㅁㄴㅇㄴ</a></li>
+      <li><a href="#" title="뉴스4"><span>4</span>한 총리 "중국발 입국 전후 코로나 검사의...ㅁㅇㅁㄴㅇㅁㄴㅇ</a></li>
+      <li><a href="#" title="뉴스5"><span>5</span>[World Now]영면에 든 펠레&middot;&middot;예전 활약..ㄴㅁㅇㅁㄴㅇㄴㅁ.</a></li>
+      <li><a href="#" title="뉴스6"><span>6</span>올해 소비자물가 5.1%&#x2191;&middot;&middot;외환위기 이후ㅁㄴㅇㅁㄴㅇ...</a></li>
+      <li><a href="#" title="뉴스7"><span>7</span>미국서 한국산 전기차도 '리스 차량'은 보조금ㅁㄴㅇㅁㄴㅇㅁㄴ</a></li>
+    </ul>
+    <ul id="potal">
+      <li><a href="#" title="뉴스1"><span>1</span>[단독]숨진 빌라왕 송 모씨&middot;&middot;"일감 받아 심...</a></li>
+      <li><a href="#" title="뉴스2"><span>2</span>[단독]운동선수-유흥업소 '선수'까지 뇌전...</a></li>
+      <li><a href="#" title="뉴스3"><span>3</span>잿더미 된 차량 그대로&middot;&middot;이 시각 갈현고가교</a></li>
+      <li><a href="#" title="뉴스4"><span>4</span>"차 두고 뛰쳐나와"순식간에 번진 불길에'...</a></li>
+      <li><a href="#" title="뉴스5"><span>5</span>윤대통령"우월한 전쟁 준비해야</a></li>
+      <li><a href="#" title="뉴스6"><span>6</span>'연쇄 살인범'신상 공개&middot;&middot;31살 이기영</a></li>
+      <li><a href="#" title="뉴스7"><span>7</span>[단독]빌라왕 뒤의 빌라왕&middot;&middot;끝은 어디인가?</a></li>
+      <li><a href="#" title="뉴스8"><span>8</span>플라스틱 방화벽 타고 빠르게 확산</a></li>
+      <li><a href="#" title="뉴스9"><span>9</span>러,또 대규모 공습&middot;&middot;벨라루스"미사일 격추"</a></li>
+      <li><a href="#" title="뉴스10"><span>10</span>미국서 한국산 전기차도'리스 차량'은 보조금</a></li>
+    </ul>
+    <ul id="sns">
+      <li><a href="#" title="뉴스1"><span>1</span>황희찬 역전골, 팬들이 뽑은 'KFA 올해의 골'</a></li>
+      <li><a href="#" title="뉴스2"><span>2</span>MBC,가장 즐겨보는 뉴스 채널 1위</a></li>
+      <li><a href="#" title="뉴스3"><span>3</span>경북 구미 고속도로서 연쇄추돌</a></li>
+      <li><a href="#" title="뉴스4"><span>4</span>"차 두고 뛰쳐나와"순식간에 번진 불길에'...</a></li>
+      <li><a href="#" title="뉴스5"><span>5</span>윤대통령"우월한 전쟁 준비해야</a></li>
+      <li><a href="#" title="뉴스6"><span>6</span>'연쇄 살인범'신상 공개&middot;&middot;31살 이기영</a></li>
+      <li><a href="#" title="뉴스7"><span>7</span>[단독]빌라왕 뒤의 빌라왕&middot;&middot;끝은 어디인가?</a></li>
+      <li><a href="#" title="뉴스8"><span>8</span>플라스틱 방화벽 타고 빠르게 확산</a></li>
+      <li><a href="#" title="뉴스9"><span>9</span>러,또 대규모 공습&middot;&middot;벨라루스"미사일 격추"</a></li>
+      <li><a href="#" title="뉴스10"><span>10</span>미국서 한국산 전기차도'리스 차량'은 보조금</a></li>
+    </ul>
+    <ul id="youtube">
+      <li><a href="#" title="뉴스1"><span>1</span>오늘 새벽 도 무인기 소동</a></li>
+      <li><a href="#" title="뉴스2"><span>2</span>[단독]운동선수-유흥업소 '선수'까지 뇌전...</a></li>
+      <li><a href="#" title="뉴스3"><span>3</span>잿더미 된 차량 그대로&middot;&middot;이 시각 갈현고가교</a></li>
+      <li><a href="#" title="뉴스4"><span>4</span>"차 두고 뛰쳐나와"순식간에 번진 불길에'...</a></li>
+      <li><a href="#" title="뉴스5"><span>5</span>윤대통령"우월한 전쟁 준비해야</a></li>
+      <li><a href="#" title="뉴스6"><span>6</span>'연쇄 살인범'신상 공개&middot;&middot;31살 이기영</a></li>
+      <li><a href="#" title="뉴스7"><span>7</span>[단독]빌라왕 뒤의 빌라왕&middot;&middot;끝은 어디인가?</a></li>
+      <li><a href="#" title="뉴스8"><span>8</span>플라스틱 방화벽 타고 빠르게 확산</a></li>
+      <li><a href="#" title="뉴스9"><span>9</span>러,또 대규모 공습&middot;&middot;벨라루스"미사일 격추"</a></li>
+      <li><a href="#" title="뉴스10"><span>10</span>미국서 한국산 전기차도'리스 차량'은 보조금</a></li>
+    </ul>
+    
+  </article>
+
+  <script>
+    const btn01 = document.getElementById('btn01');
+    btn01.addEventListener('click',function(){
+      document.getElementById('potal').style.display='none';
+      document.getElementById('MBC').style.display='block';
+      document.getElementById('sns').style.display='none';
+      document.getElementById('youtube').style.display='none';
+      document.getElementById('btn01').style.color='rgb(72,108,209)';
+      document.getElementById('btn02').style.color='#333';
+      document.getElementById('btn03').style.color='#333';
+      document.getElementById('btn04').style.color='#333';
+    })
+    const btn02 = document.getElementById('btn02');
+    btn02.addEventListener('click',function(){
+      document.getElementById('MBC').style.display='none';
+      document.getElementById('sns').style.display='none';
+      document.getElementById('youtube').style.display='none';
+      document.getElementById('potal').style.display='block';
+      
+      document.getElementById('btn02').style.color='rgb(72,108,209)';
+      document.getElementById('btn01').style.color='#333';
+      document.getElementById('btn03').style.color='#333';
+      document.getElementById('btn04').style.color='#333';
+    })
+    const btn03 = document.getElementById('btn03');
+    btn03.addEventListener('click',function(){
+      document.getElementById('sns').style.display='block';
+      document.getElementById('potal').style.display='none';
+      document.getElementById('youtube').style.display='none';
+      document.getElementById('btn03').style.color='rgb(72,108,209)';
+      document.getElementById('btn02').style.color='#333';
+      document.getElementById('btn01').style.color='#333';
+      document.getElementById('btn04').style.color='#333';
+    })
+    const btn04 = document.getElementById('btn04');
+    btn04.addEventListener('click',function(){
+      document.getElementById('youtube').style.display='block';
+      document.getElementById('MBC').style.display='none';
+      document.getElementById('potal').style.display='none';
+      document.getElementById('sns').style.display='none';
+      document.getElementById('btn04').style.color='rgb(72,108,209)';
+      document.getElementById('btn01').style.color='#333';
+      document.getElementById('btn03').style.color='#333';
+      document.getElementById('btn02').style.color='#333';
+    })
+    //1.변수 선언
+    //const tabList = document.querySelectorAll('.list'); 
+    //getElementryByID('')는 아이디 명 선택할 때 querySelectorAll('')는 클래스선택자나 태그선택자 선택할때
+  </script>
+</body>
+</html>
