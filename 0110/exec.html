@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습예제-스타벅스</title>
+  <style>
+    section{position: relative;}
+    section > img:first-child{
+      width: 100%;
+    }
+    section > img:nth-child(2){
+      position: absolute;
+      width: 4%;
+      right: 10px; top: 10px;
+    }
+    section > img:nth-child(3){
+      position: absolute;
+      left: 160px; top: 50px;
+      width: 10%;
+    }
+    section > img:nth-child(4){
+      position: absolute;
+      right: 800px; top: 30px;
+      width: 13%;
+      display: none;
+    }
+    section > img:nth-child(5){
+      position: absolute;
+      right: 580px; top: 50px;
+      width: 10%;
+      display: none;
+    }
+    section > img:nth-child(6){
+      position: absolute;
+      left: 1000px; top: 190px;
+      width: 13%;
+      display: none;
+    }
+    section > img:nth-child(7){
+      position: absolute;
+      left: 760px; top: 190px;
+      width: 12%;
+      display: none;
+    }
+    section > img:nth-child(8){
+      position: absolute;
+      right: 400px; top: 190px;
+      width: 20%;
+      display: none;
+    }
+    section > img:last-child{
+      position: absolute;
+      right: 350px; top: 140px;
+      width: 11%;
+      display: none;
+    }
+  </style>
+  <!-- 제이쿼리 라이브러리 연결하기 - 직접다운, cdn방식 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js">
+  </script>
+  <script>
+    $(document).ready(function(){
+      $('section img:nth-child(4)').delay(100).fadeIn();
+      $('section img:nth-child(5)').delay(100).fadeIn();
+      $('section img:nth-child(6)').delay(1500).fadeIn();
+      $('section img:nth-child(7)').delay(1500).fadeIn();
+      $('section img:nth-child(8)').delay(3000).fadeIn();
+      $('section img:last-child').delay(3000).fadeIn();
+    })
+  </script>
+</head>
+<body>
+  <section>
+    <img src="./exec02/images/bev_bg.jpg" alt="">
+    <img src="./exec02/images/badge_main_autumn2.png" alt="">
+    <img src="./exec02/images/m_18_emblem.png" alt="">
+    
+    <img src="./exec02/images/bev1_txt.png" alt="">
+    <img src="./exec02/images/bev1_cup.png" alt="">
+    
+    <img src="./exec02/images/bev2_cup.png" alt="">
+    <img src="./exec02/images/bev2_txt.png" alt="">
+
+    <img src="./exec02/images/bev3_cup.png" alt="">
+    <img src="./exec02/images/bev3_txt.png" alt="">
+  </section>
+</body>
+</html>
