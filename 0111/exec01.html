@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>과제 스티브잡스</title>
+  <style>
+    div{
+      
+      width: 100%; height: 100%;
+      position: relative;
+      border: 2px solid #333;
+      overflow: hidden;
+    }
+    div::after{ /* 부모높이 살리기 */
+      display: block;
+      height: 100%;
+      content: "";
+      padding-bottom: 70%;
+    }
+    .img01{
+      position: absolute;
+      width: 60%; height: 100%; right: 0%; bottom:-400% 
+    }
+    .img02{
+      position: absolute;
+      width: 30%; top: 40%; left: -50%;
+    }
+  </style>
+  <!-- 제이쿼리 라이브러리 연결하기 - 직접다운, cdn방식 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js">
+  </script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+    $(function(){
+      // $('.img01').hide();
+      // $('.img02').hide();
+
+      $('.img01').animate({'top':'0%'},1100);
+      $('.img02').animate({'left':'0%'},1000)
+
+    })
+  </script>
+</head>
+<body>
+  <div>
+    <img src="./images/jobs.png" alt="잡스" class="img01">
+    <img src="./images/jobs_text.gif" alt="잡스텍스트" class="img02">
+  </div>
+</body>
+</html>
