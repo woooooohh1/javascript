@@ -12,10 +12,19 @@
 -----------------------
 2. 카페 CSS게시판
 
+varchar : 문자타입의 데이터
+int : 정수형 데이터
+primary key : 기본키(데이터의 중심이 되는 이름)
 
-
-
-
+테이블조회 : show tables;
+테이블 속성 조회 : desc fruit;
+데이터 삽입하기
+insert into 테이블명(필드명1) values('값1');
+insert into fruit values('Apple',1000,'Red','국산');
+테이블조회: select * from fruit;
+data 수정하기 :
+update 테이블명 set 필드명='값' where 필드명 ='값'; 
+update fruit set country='korea' where country = '????';
 
 - 반응형
 - pc화면(뚜레쥬르)
@@ -23,8 +32,21 @@
 - 모바일앱(대한항공)
 - 자바스크립트(커피전문점)
 
+insert into fruit values('Pear',2000,'Yellow','korea');
+insert into fruit values('Peach',3000,'Pink','korea');
+insert into fruit values('Watermelon',4000,'Green','korea');
+insert into fruit values('Persimmon',5000,'Orange','korea');
+insert into fruit values('Tomato',6000,'Red','USA');
+insert into fruit values('Banana',7000,'Yellow','Indonesia');
+insert into fruit values('Kiwi',8000,'Green','New Zealand');
+insert into fruit values('Pineapple',9000,'Green','Indonesia');
+insert into fruit values('Jujube',10000,'Green','China');
 
-
+1.테이블 생성
+2. 테이블 조회
+3. 테이블 데이터 삽입
+4. 테이블 데이터 조회
+5. php문서를 활용하여 데이터베이스 연결하고 데이터 출력
 
 
 

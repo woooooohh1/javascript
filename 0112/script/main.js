@@ -22,14 +22,14 @@ $(function(){
   //왼쪽
   function moveLeft(){
     console.log('왼쪽');
-    $('.slide ul').animate({'margin-left':'-3200px'},300,function(){
+    $('.slide ul').animate({'margin-left':'-3200px'},500,function(){
       $('.slide li:first-child').insertAfter('.slide li:last-child');
       $('.slide ul').css('margin-left','-1600px');
     });
   }
   //오른쪽
   function moveRight(){
-    $('.slide ul').animate({'margin-left':'0px'},300,function(){
+    $('.slide ul').animate({'margin-left':'0px'},500,function(){
       $('.slide li:last-child').insertBefore('.slide li:first-child');
       $('.slide ul').css('margin-left','-1600px');
     });

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습예제</title>
+  <!--폰트어썸-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <style>
+    *{margin: 0px; padding: 0px;}
+    a{color: #333; text-decoration: none;}
+    h2, dl, dt, dd{padding: 10px;}
+    ul,li,ol{list-style: none;}
+    .p_wrap{
+      width: 340px; height: 378px;
+      border: 1px solid #333;
+      box-sizing: border-box;
+      position: relative;    
+    }
+    .popup,.c_btn,.c_btn1{
+      display: flex;
+    }
+    .popup{
+      position: relative;
+    }
+    .c_btn,.c_btn1{
+      position: absolute;
+      justify-content: center;
+    }
+    .c_btn{
+      bottom: 2%;
+      left: 39%;
+    }
+    .c_btn li{
+      width: 15px; height: 15px;
+      background: #fff;
+      border-radius: 50%;
+      margin: 0px 2px;
+      transition: 0.2s;
+    }
+    .c_btn1{
+      bottom: 1%;
+      right: 2%;
+    }
+    .c_btn1 li{
+      color: #fff;
+      font-size: 20px;
+      padding: 0px 5px;
+    }
+    .on{
+      background: #333 !important;
+      width: 35px !important; 
+      border-radius: 10px !important;
+    }
+  </style>
+  <!-- 제이쿼리 라이브러리 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <!-- 제이쿼리 ui라이브러리 -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $(function(){
+      //컨트롤 버튼 클릭 시
+      let n=$('.c_btn li').index();
+      console.log(n);
+      let img_w=$('.popup img').width();
+
+      $('.c_btn li').click(function(){
+        n=$(this).index();
+        console.log(n);
+        $('.popup').stop().animate({'left':-img_w*n},500);
+        $('.c_btn li').removeClass('on');
+        $(this).addClass('on');
+      });
+
+      //자동으로
+      function autoSlide(n){
+        n=-(n*$('.popup img').width());
+        $('.popup').animate({'left':n},500);
+      }
+      let Timer =setInterval(function(){
+        if(n==2){
+          n=0;
+          $('.c_btn li').removeClass('on');
+          $('.c_btn li').eq(n).addClass('on');
+        }else{
+          n++;
+          $('.c_btn li').removeClass('on');
+          $('.c_btn li').eq(n).addClass('on');
+        }
+        autoSlide(n);
+      },2000);
+
+      //마우스 오버시 타이머 멈추기
+      $('.c_btn').hover(function(){
+        clearInterval(Timer);
+      },function(){
+        Timer = setInterval(function(){
+          if(n==2){
+            n=0;
+            $('.c_btn li').removeClass('on');
+            $('.c_btn li').eq(n).addClass('on');
+          }else{
+            n++;
+            $('.c_btn li').removeClass('on');
+            $('.c_btn li').eq(n).addClass('on');
+          }
+          autoSlide(n);
+        },2000);
+      });
+
+      //정지 플레이버튼 만들기
+      $('.c_btn1 li:first-child').click(function(){
+        clearInterval(Timer);
+      })
+      $('.c_btn1 li:last-child').click(function(){
+        Timer = setInterval(function(){
+          if(n==2){
+            n=0;
+            $('.c_btn li').removeClass('on');
+            $('.c_btn li').eq(n).addClass('on');
+          }else{
+            n++;
+            $('.c_btn li').removeClass('on');
+            $('.c_btn li').eq(n).addClass('on');
+          }
+          autoSlide(n);
+        },2000);
+      })
+    });
+
+    
+  </script>
+</head>
+<body>
+  <article class="p_wrap">
+    <ul class="popup">
+      <li><a href="#" title=""><img src="./images/01-1.jpg" alt=""></a></li>
+      <li><a href="#" title=""><img src="./images/02-1.jpg" alt=""></a></li>
+      <li><a href="#" title=""><img src="./images/03-1.jpg" alt=""></a></li>
+    </ul>
+    <ul class="c_btn">
+      <li class="on">&nbsp;</li>
+      <li>&nbsp;</li>
+      <li>&nbsp;</li>
+    </ul>
+    <ul class="c_btn1">
+      <li><i class="fas fa-pause"></i></li>
+      <li><i class="fas fa-play"></i></li>
+    </ul>
+  </article>
+</body>
+</html>
