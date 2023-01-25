@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>쿠팡 실습예제</title>
+  <style>
+    ul,li{margin: 0px; padding: 0px;}
+    article{width: 100%; position: relative;}
+    article div img{width: 100%;}
+    article nav{position: absolute; top: 3%; right: 10px;}
+    article nav ul{list-style: none; display: inline-block; box-shadow: 1px 1px 5px #777;}
+    article nav ul a{width: 100%;}
+    article nav li img:hover{border: 2px solid #4285F4;}
+
+  </style>
+  <!-- 제이쿼리 라이브러리 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <!-- 제이쿼리 ui라이브러리 -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $(function(){
+      $('article nav li a').mouseenter(function(){
+        // let n=$('article nav ul').index('article nav ul li');
+        // console.log(n);
+        let url = $(this).attr('href');
+        // console.log(url);
+        $('article div img').attr('src',url);
+      });
+      let n =1;
+      setInterval(function(){
+        n++;
+        if(n>6){
+          n=1;
+        }
+        $('article div img').attr('src','./images03/쿠팡0'+n+'.jpg');
+        // $('article nav li img').css('border','2px solid #4285f4');
+      },3000);
+    });
+  </script>
+</head>
+<body>
+  <h2>쿠팡 베너 실습예제</h2>
+  <article>
+    <div>
+      <img src="./images03/쿠팡01.jpg" alt="배너1">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="./images03/쿠팡01.jpg"><img src="./images03/쿠팡07.jpg" alt="배너1"></a></li>
+        <li><a href="./images03/쿠팡02.jpg"><img src="./images03/쿠팡08.jpg" alt="배너2"></a></li>
+        <li><a href="./images03/쿠팡03.jpg"><img src="./images03/쿠팡09.png" alt="배너3"></a></li>
+        <li><a href="./images03/쿠팡04.jpg"><img src="./images03/쿠팡10.png" alt="배너4"></a></li>
+        <li><a href="./images03/쿠팡05.jpg"><img src="./images03/쿠팡11.jpg" alt="배너5"></a></li>
+        <li><a href="./images03/쿠팡06.jpg"><img src="./images03/쿠팡12.png" alt="배너6"></a></li>
+      </ul>
+    </nav>
+  </article>
+</body>
+</html>
