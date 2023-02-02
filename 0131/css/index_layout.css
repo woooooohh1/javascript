@@ -4,6 +4,7 @@
   --bg-color01:#d63384;
   --t-color01:#333;
   --t-color02:#fff;
+  --t-color03:#ff0;
 }
 
 *{margin: 0px auto;}
@@ -29,7 +30,8 @@ header h1{
 .gnb{
   position: absolute;
   width: 1000px;
-  top: 20px;
+  top: 10px;
+  right: 2%;
 }
 .gnb ul{
   display: flex;
@@ -41,15 +43,25 @@ header h1{
   line-height: 60px;
   font-size: 20px;
   text-transform: capitalize;
+  transition: 0.3s;
 }
-
+.gnb ul li a:hover{
+  color: var(--t-color03)!important;
+  font-size: 24px!important;
+  font-weight: bold;
+}
+.t_act{
+  color: var(--t-color03)!important;
+  font-size: 24px!important;
+  font-weight: bold;
+}
 /* 콘텐츠 서식 */
 main{
   width: 1200px;
   margin: 0px auto;
 }
 main section{
-  height: 700px;
+  height: 850px;
 }
 main section:nth-child(2n){
   background-color: rgb(255, 193, 193);
