@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,20 +7,58 @@
   <title>현대장동차 캐스퍼 - 스크롤 레이아웃</title>
   <!--초기화-->
   <link rel="stylesheet" href="./css/reset.css" type="text/css">
+  <!--공통서식, 기본서식-->
   <link rel="stylesheet" href="./css/base.css" type="text/css">
+  <!--콘텐츠서식-->
   <link rel="stylesheet" href="./css/main.css" type="text/css">
+  <!--레이아웃서식-->
   <link rel="stylesheet" href="./css/layout.css" type="text/css">
+  <!--스와이퍼 슬라이드-->
+  <link rel="stylesheet" href="./css/swiper.css" type="text/css">
   <!--폰트어썸-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+
+  <!-- css3추가 속성 시 접두사 자동으로 붙여주는 스크립트-->
+  <script src="./script/prefixfree.min.js"></script>
   <!-- 제이쿼리 라이브러리 -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <!-- 제이쿼리 ui라이브러리 -->
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <!--제이쿼리 쿠키파일-->
+  <script src="./script/jquery.cookie.js"></script>
+
+  <!-- 스와이퍼 스크립트 -->
+  <script src="./script/swiper.js"></script>
+  <!--콘텐츠 스크립트-->
   <script src="./script/layout.js"></script>
+  <!-- 공통 스크립트 -->
   <script src="./script/main.js"></script>
+
+  
 </head>
 <body>
-  <header></header>
+  <header>
+    <h1>
+      <a href="index.html" title="메인페이지로 바로가기">
+        <img src="./images/logo-casper-white.028f418.png" alt="상단로고">
+      </a>
+    </h1>
+    <!-- 상단 스크롤시 고정 내비게이션 -->
+    <nav>
+      <ul class="gnb">
+        <li><a href="#" title="소개">소개</a></li>
+        <li><a href="#" title="체험">체험</a></li>
+        <li><a href="#" title="이벤트">이벤트</a></li>
+        <li><a href="#" title="구매안내">구매안내</a></li>
+        <li><a href="#" title="고객지원">고객지원</a></li>
+      </ul>
+    </nav>
+
+    <i class="fas fa-user"></i>
+    <i class="fas fa-bell"></i> <!--알림아이콘-->
+  </header>
+  <!--원형 내비게이션-->
   <nav id="m_nav">
     <ul>
       <li><span>1</span><a href="#" title="소개">소개</a></li>
@@ -31,8 +69,134 @@
     </ul>
   </nav>
 
-  <main></main>
+  <!--메인콘텐츠 영역-->
+  <main>
+    <section id="main_intro">
+      <h2>캐스퍼 인트로 영상</h2>
+      <article>
+        <h3>CASPER</h3>
+        <p>오직 캐스퍼 온라인에서만 구매하실 수 있습니다.</p>
+        <a href="https://casper.hyundai.com/vehicles/making/model" title="나만의 캐스퍼 만들기">나만의 캐스퍼 만들기</a>
+        <a href="https://casper.hyundai.com/vehicles/benefit" title="나만의 캐스퍼 만들기">구매 혜택보기</a>
+        <a href="https://casper.hyundai.com/vehicles/highlight" title="나만의 캐스퍼 만들기">자세히 보기</a>
+      </article>
+
+      <video autoplay muted loop="infinite">
+        <source src="./images/casper_te_18.webm" type="video/webm">
+      </video>
+
+      <a href="#" title="아래로이동" id="next_btn">아래로이동</a>
+    </section>
+
+    <section id="top3">
+      <h2>가장 많이 찾은 캐스퍼 TOP3</h2>
+      <p>지금 가장 인기 있는 조합을 확인해보세요.</p>
+      <div class="swiper-container main_slide">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <span>1위</span>
+            <p>가솔린 1.0 터보 인스퍼레이션</p>
+            <img src="./images/color_ivory.112b874.png" alt="아이보리색 케스퍼">
+            <ul class="ul01">
+              <li>
+                <div>
+                  <span class="c_box01">&nbsp;</span>
+                  <ul class="ul02">
+                    <li>외장색상</li>
+                    <li>아이보리</li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <div>
+                  <span>&nbsp;</span>
+                  <ul>
+                    <li>내장색상</li>
+                    <li>블랙</li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <div>
+                  <span>&nbsp;</span>
+                  <ul>
+                    <li>선택품목</li>
+                    <li>캐스퍼 액티브 ||</li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                19,600,000원
+              </li>
+            </ul>
+          </div>
+
+          <div class="swiper-slide">
+            <span>2위</span>
+            <p>가솔린 1.0 터보 인스퍼레이션</p>
+            <img src="./images/color_khaki.02b812c.png" alt="">
+            
+          </div>
+
+          <div class="swiper-slide">
+            <span>3위</span>
+            <p>가솔린 1.0 터보 인스퍼레이션</p>
+            <img src="./images/color_orange.0c6edb3.png" alt="">
+          
+          </div>
+        </div>
+        <!-- 컨트롤 버튼 나오는 태그 -->
+        <div class="swiper-pagination"></div>
+        <!-- 좌, 우 버튼 나오는 태그 -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+
+    <section id="intro">
+      <h2>소개</h2>
+    </section>
+
+    <section id="test">
+      <h2>시승신청</h2>
+    </section>
+
+    <section id="event">
+      <h2>이벤트&프로모션</h2>
+    </section>
+
+    <section id="buy">
+      <h2>캐스퍼 구매안내</h2>
+    </section>
+
+    <section id="cs">
+      <h2>고객지원</h2>
+    </section>
+  </main>
 
   <footer></footer>
 </body>
+<!-- 스와이퍼 스크립트 -->
+<script src="./script/swiper.js"></script>
+<script>
+  let swiper = new Swiper('.main_slide', {
+    autoplay: {
+      delay:4000,
+disableOnInteraction:false,
+},
+navigation: {
+  nextEl : ".swiper-button-next",
+  prevEl : ".swiper-button-prev",
+},
+pagination : {
+  el:".swiper-pagination",
+  clickable: true,
+}
+});
+
+</script>
+
 </html>
