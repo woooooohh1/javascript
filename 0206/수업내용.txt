@@ -20,3 +20,38 @@
 4. 프로젝트
 5. 네이버 카페 자료 업로드
 -----------------------------
+
+set character set euckr; //한국어
+
+create table test_drive(
+num int(10) not null auto_increment primary key, 
+name varchar(60) not null,
+phone varchar(12) not null,
+sns varchar(1) not null,
+email varchar(255),
+region varchar(60),
+s_car varchar(60),
+my_car varchar(60),
+s_date date
+);
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE test_drive (
+  num INT(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(60) NOT NULL,
+  phone VARCHAR(12) NOT NULL,
+  sms VARCHAR(1) NOT NULL,
+  email VARCHAR(255),
+  region VARCHAR(60),
+  s_car VARCHAR(60),
+  my_car VARCHAR(60),
+  s_date DATE
+);

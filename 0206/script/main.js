@@ -22,8 +22,10 @@ $(function(){
   //쿠키의 존재여부를 체크하여 쿠키를 생성하거나 모달을 숨긴다.
   function closeModal(){
     if(ch.is(':checked')){
+      //쿠키 생성
       $.cookie('popup','none',{expires:7,path:'/'})
     }
+    //체크박스에 체크 안한 경우는 그냥 모달을 숨긴다.
     $('.modal').hide();
   }
 

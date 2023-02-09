@@ -25,3 +25,44 @@ a{
   text-decoration:none;
   font-size:12px;
 }
+/* 푸터서식 */
+footer{
+  width: 100%;
+  height: 100px;
+  background-color: #333;
+  color: rgb(149, 149, 149)
+}
+footer > div{
+  display: flex;
+  width: 1200px; margin: 0px auto;
+}
+footer > div h2{
+  display: inline-block;
+  width: 150px;
+  height: 100px;
+}
+footer > div h2 img{
+  display: block;
+  margin-top: 10px;
+}
+footer > div >div{
+  margin-top: 16px;
+  margin-left: 30px;
+}
+footer ul{display: flex; color: rgb(149, 149, 149); margin-bottom: 10px;}
+footer ul li a{color: #fff; font-size: 10px;}
+footer ul li {padding-right: 20px;}
+
+.u01 li:not(:last-child){
+  border-right: 1px solid #fff;
+}
+.u01 li:nth-child(2){
+  color: #fff;
+}
+.u01 li:not(:first-child){
+  margin-left: 20px;
+}
+.u02{
+  width: 1050px;
+  /* justify-content: space-between; */
+}
