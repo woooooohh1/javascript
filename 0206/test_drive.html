@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>현대자동차 캐스퍼 - 시승신청 예약하기</title>
+  <!-- 초기화 -->
+  <link href="./css/reset.css" rel="stylesheet" type="text/css">
+  <!-- 기본서식, 공통서식 -->
+  <link href="./css/base.css" rel="stylesheet" type="text/css">
+  <!-- 레이아웃서식 -->
+  <link href="./css/layout.css" rel="stylesheet" type="text/css">
+  <style>
+    header{ background:#000; }
+    main{padding:140px 0px 50px 0px;}
+    fieldset{
+      width:480px;
+      margin:0px auto;
+    }
+    fieldset > legend{
+      font-weight:bold;
+      text-align:center;
+      font-size:28px;padding-bottom:60px;
+    }
+    input[type="text"], input[type='email'], input[type='date']{
+      width:300px;height:30px;
+    }
+    label[for=s01],label[for=s02]{
+      display: inline;
+    }
+    select,option{width: 308px; height: 40px; transform: translateY(-3px);}
+    fieldset p{
+      /* display: inline; */
+      /* width: 300px; */
+      font-size: 18px;
+      line-height:50px;
+    }
+    fieldset label{
+      font-size:18px;
+      display:inline-block;
+      width:100px;
+    }
+    input[type="submit"],input[type="reset"]{
+      width: 48%;
+      background: #3b3b3b;
+      border: none;
+      border-radius: 20px;
+      color: #fff;
+      height: 32px;
+    }
+    input[type="submit"]:hover,input[type="reset"]:hover{
+      background: #066aad;
+    }
+    footer{height:100px;}
+  </style>
+  <!-- 아이콘폰트 주소 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- css3추가속성시 접두사 자동으로 붙여주는 스크립트 -->
+  <script src="./script/prefixfree.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>
+      <a href="index.html" title="메인페이지로 바로가기">
+        <img src="./images/logo-casper-white.png" alt="상단로고">
+      </a>
+    </h1>
+
+    <!-- 상단 스크롤시 고정 내비게이션 -->
+    <nav>
+      <ul class="gnb">
+        <li><a href="#" title="소개">소개</a></li>
+        <li><a href="#" title="체험">체험</a></li>
+        <li><a href="#" title="이벤트">이벤트</a></li>
+        <li><a href="#" title="구매안내">구매안내</a></li>
+        <li><a href="#" title="고객지원">고객지원</a></li>
+      </ul>
+    </nav>
+
+    <i class="fas fa-user"></i>
+    <i class="fas fa-bell"></i><!-- 알림아이콘 -->
+  </header>
+
+  <main>
+    <form name="시승신청" method="post" action="db_insert.php">
+      <fieldset>
+        <legend>시승신청 온라인 예약</legend>
+        <p><label>고객명 : </label><input type="text" required name="name" id="name"></p>
+        <p><label>휴대폰 : </label><input type="text" required name="phone" id="phone"></p>
+        <p>sns수신여부 : 
+        <label for="s01">수신</label>
+        <input type="radio" name="sns" id="s01" value="Y">
+        <label for="s02">수신안함</label>
+        <input type="radio" name="sns" id="s02" value="N">
+      </p>
+
+        <p><label>이메일 주소</label><input type="email" name="email" id="email" required></p>
+
+        <p><label for="region">전시장 선택 : </label>
+          <select name="region" id="region" required>
+            <option value="">전시장선택</option>
+            <option value="춘천">춘천</option>
+            <option value="속초">속초</option>
+            <option value="서울">서울</option>
+            <option value="강릉">강릉</option>
+          </select>
+        </p>
+        <p><label for="car">차량 선택 : </label>
+          <select name="s_car" id="car" required>
+            <option value="">차량선택</option>
+            <option value="케스퍼">케스퍼</option>
+            <option value="아반떼">아반떼</option>
+            <option value="싼타페">싼타페</option>
+          </select>
+        </p>
+        <p><label>보유차종 : </label><input type="text" name="my_car" id="my_car" required></p>
+        <p><label>시승희망일 : </label><input type="date" name="s_date" id="s_date" required></p>
+        <p>
+          <input type="submit" value="예약하기">
+          <input type="reset" value="취소하기">
+        </p>
+      </fieldset>
+    </form>
+  </main>
+
+  
+  <footer>
+    <div>
+      <h2>
+        <img src="./images/logo-hyundai.a9ebdc6.png" alt="현대 로고">
+      </h2>
+      <div>
+        <ul class="u01">
+          <li>이용약관</li>
+          <li>개인정보 처리방침</li>
+          <li>저작권 안내</li>
+          <li>공동인증서 안내</li>
+          <li>현대자동차 홈페이지</li>
+        </ul>
+        <ul class="u02">
+          <li>사업자등록번호 : 101-81-09147</li>
+          <li>통신판매업신고번호 : 2002-01546</li>
+          <li>대표이사 : 장재훈 <a href="" title="">사업자정보확인></a></li>
+          <li>캐스퍼 고객센터 : 080-500-6000</li>
+        </ul>
+        <ul>
+          <li>주소 : 서울시 서초구 현동로 12</li>
+          <li>호스팅서비스 제공 : 현대오토에버(주)</li>
+        </ul>
+        <address>COPYRIGHT &COPY; HYUNDAI MOTOR COMPANY, ALL RIGHTS RESERVED</address>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

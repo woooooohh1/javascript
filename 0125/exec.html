@@ -13,7 +13,7 @@
     article nav ul{list-style: none; display: inline-block; box-shadow: 1px 1px 5px #777;}
     article nav ul a{width: 100%;}
     article nav li img:hover{border: 2px solid #4285F4;}
-
+    .act{border: 2px solid #4285f4;}
   </style>
   <!-- 제이쿼리 라이브러리 -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -28,14 +28,16 @@
         // console.log(url);
         $('article div img').attr('src',url);
       });
-      let n =1;
+      let n =$('ul li').index()+1;
       setInterval(function(){
         n++;
         if(n>6){
           n=1;
         }
+
+        
         $('article div img').attr('src','./images03/쿠팡0'+n+'.jpg');
-        // $('article nav li img').css('border','2px solid #4285f4');
+        $('ul li').eq(n-1).attr('Class','act').siblings().removeClass('act');
       },3000);
     });
   </script>
@@ -48,7 +50,7 @@
     </div>
     <nav>
       <ul>
-        <li><a href="./images03/쿠팡01.jpg"><img src="./images03/쿠팡07.jpg" alt="배너1"></a></li>
+        <li class="act"><a href="./images03/쿠팡01.jpg"><img src="./images03/쿠팡07.jpg" alt="배너1"></a></li>
         <li><a href="./images03/쿠팡02.jpg"><img src="./images03/쿠팡08.jpg" alt="배너2"></a></li>
         <li><a href="./images03/쿠팡03.jpg"><img src="./images03/쿠팡09.png" alt="배너3"></a></li>
         <li><a href="./images03/쿠팡04.jpg"><img src="./images03/쿠팡10.png" alt="배너4"></a></li>

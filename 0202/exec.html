@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>텝 메뉴 응용</title>
+  <style>
+    *{margin: 0px; padding: 0px;}
+    ul,ol,li{list-style: none;}
+    a{text-decoration: none; color: #333;}
+    body{
+      font-family: "맑은 고딕", arial, sans-serif;
+      color:#333;
+    }
+    article{
+      margin-top: 24px;
+      width: 900px; height: 650px;
+      margin: 0px auto;
+      border: 5px solid #333;
+      position:relative;
+    }
+    article h2{display: none;}
+    .tab_wrap{
+      display: flex; 
+      justify-content: space-around;
+      width: 900px;
+    }
+    .tab_wrap li{
+      width: 180px; 
+      height: 114px; 
+    }
+    /* .tab_wrap li div{width: 160px;} */
+    .tab_wrap li a{
+      display: inline-block; /* a태그 가로 높이 만들기 */
+      width: 180px; 
+      text-align: center; 
+      /* border:1px solid #333; */
+      font-weight: bold;
+    }
+    .tab_wrap li a img{
+      padding: 0px 60px;
+    }
+    .tab_wrap li:first-child a img{
+      width: 58px;
+      padding-top: 22px; padding-bottom: 10px;
+    }
+    .tab_wrap li:nth-child(2) a img{
+      width: 68px;
+      padding-top: 24px; padding-bottom: 10px;
+    }
+    .tab_wrap li:nth-child(3) a img{
+      width: 58px;
+      padding-top: 20px; padding-bottom: 10px;
+    }
+    .tab_wrap li:nth-child(4) a img{
+      width: 56px;
+      padding-top: 20px; padding-bottom: 10px;
+    }
+    .tab_wrap li:last-child a img{
+      width: 67px;
+      padding-top: 18px; padding-bottom: 10px;
+    }
+    .on01{
+      background-color: #EF6D00;
+      color: #fff;
+    }
+    .tab_wrap li>img{
+      width: 900px; height: 536px;
+      position: absolute;
+      left: 0px; bottom:0px;
+      /* float: left; */
+    }
+    .tab_wrap li>img:not(.c01){display: none;}
+  </style>
+  <!-- 제이쿼리 라이브러리 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <!-- 제이쿼리 ui라이브러리 -->
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <script>
+    $(function(){
+      let icon = $('.tab_wrap li a');
+      
+      
+      icon.click(function(){
+        // console.log(href);
+        
+        // let href = $(this).attr('href'); // off
+        let title = $(this).attr('title'); // on
+        let src = $(this).find('img').attr('src');
+
+        $(this).addClass('on01').parent().siblings().find('a').removeClass('on01');
+
+        //parent() 하나 제거 이유 : icon.click인데 기준이 a에서 시작되어서 li를 선택하기 위해
+        //title, href 위치 변경 이유 : title이 on, href가 off라서 (클릭한 요소가 on이 되어야함.)
+
+        //코드 교체 이유 : 요소별로 속성을 추출하여 삽입해야하는데 아래 코드로는 변경하는데 어려움이 있어(하나의 요소값밖에 선택하지 못함) 교체
+        // $(this).find('img').attr('src', title).parent().siblings().find('a').find('img').attr('src', href);
+        $(this).find('img').attr('src', title);
+        //메인 이미지(공통 class con)를 전부 가린다
+        $('.con').hide();
+        //선택한 요소의 이미지를 출력한다.
+        $(this).next().show();
+
+        //나머지 이미지 off로 변경하는 코드
+        //본인의 부모를 제외한 요소(li) 선택하여 반복문 each 메소드 실행
+        $(this).parent().siblings().each(function(){
+          //off값을 가진 href를 추출
+          let href = $(this).find('a').attr('href');
+          //메인 이미지(공통 class con)의 선택을 not으로 제외하며 src 변경
+          $(this).find('img:not(.con)').attr('src', href);
+        });
+
+        //$(this).data('subsrc') // ./img/ico_theme_zone_1_on.png
+
+        return false;
+      });
+    });
+  </script>
+</head>
+<body>
+  <h2>텝 메뉴 응용</h2>
+  <article>
+    <h2>제주도로 떠나자</h2>
+    <ul class="tab_wrap">
+      <li>
+        <a href="./img/ico_theme_zone_1_off.png" title="./img/ico_theme_zone_1_on.png" data-subsrc="./img/ico_theme_zone_1_on.png" class="on01">
+          <img src="./img/ico_theme_zone_1_on.png" alt="테마여행">테마여행
+        </a>
+        <img src="./img/01.jpg" alt="테마별로 즐기는 취향저격 제주여행" class="con c01">
+      </li>
+
+      <li>
+        <a href="./img/ico_theme_zone_2_off.png" title="./img/ico_theme_zone_2_on.png">
+          <img src="./img/ico_theme_zone_2_off.png" alt="추천일정">추천일정
+        </a>
+        <img src="./img/02.jpg" alt="" class="con c02">
+      </li>
+
+      <li>
+        <a href="./img/ico_theme_zone_3_off.png" title="./img/ico_theme_zone_3_on.png">
+          <img src="./img/ico_theme_zone_3_off.png" alt="스크린속 제주">스크린속 제주
+        </a>
+        <img src="./img/03.jpg" alt="" class="con c03">
+      </li>
+
+      <li>
+        <a href="./img/ico_theme_zone_4_off.png" title="./img/ico_theme_zone_4_on.png">
+          <img src="./img/ico_theme_zone_4_off.png" alt="교통정보">교통정보
+        </a>
+        <img src="./img/04.jpg" alt="" class="con c04">
+      </li>
+
+      <li>
+        <a href="./img/ico_theme_zone_5_off.png" title="./img/ico_theme_zone_5_on.png">
+          <img src="./img/ico_theme_zone_5_off.png" alt="안전,안심관광 가이드">안전&middot;안심관광 가이드
+        </a>
+        <img src="./img/05.jpg" alt="" class="con c05">
+      </li>
+    </ul>
+
+  </article>
+  
+</body>
+</html>
